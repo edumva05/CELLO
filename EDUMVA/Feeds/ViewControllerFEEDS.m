@@ -37,7 +37,7 @@ NSString *fmyURL;
     if (_gnexus) {
         [self nextUrl:_gnexus];
     } else {
-        [self nextUrl:@"ftp://192.168.1.188/f_feeds/"];
+        [self nextUrl:@"ftp://172.14.0.32/f_feeds/"];
         [self getPath:fmyURL];
     }
     
@@ -184,7 +184,7 @@ NSString *flla ;
         int *get3 = [get2 integerValue];
         NSLog(@"%d",get3);
         
-        NSString *ftpLocation = [NSString stringWithFormat:@"ftp://192.168.1.188/f_feeds/%@_%d/%d.jpg", nameGet, get3, get3];
+        NSString *ftpLocation = [NSString stringWithFormat:@"ftp://172.14.0.32/f_feeds/%@_%d/%d.jpg", nameGet, get3, get3];
         
         NSLog(@"%@", ftpLocation);
         //variable to recieve data
@@ -250,10 +250,10 @@ NSString *flla ;
 
 
 -(void)nextUrl :(NSString *)str {
-    if ([str isEqual: @"ftp://192.168.1.188/f_feeds/"]) {
+    if ([str isEqual: @"ftp://172.14.0.32/f_feeds/"]) {
         
     
-    if ([str  isEqual: @"ftp://192.168.1.188/f_feeds/"]) {
+    if ([str  isEqual: @"ftp://172.14.0.32/f_feeds/"]) {
         [self.flblhead setText:@"Feeds"];
     } else {
         if ([str hasPrefix:@"ftp://"]) {
@@ -287,7 +287,7 @@ NSString *flla ;
         [self.feedscollectionView reloadData];
     }
     
-    if ([_gurl isEqual:@"ftp://192.168.1.188/f_feeds/"]) {
+    if ([_gurl isEqual:@"ftp://172.14.0.32/f_feeds/"]) {
         [self.gbtn setEnabled:NO];
         self.gbtn.alpha = 0;
     } else {
@@ -317,7 +317,7 @@ NSString *flla ;
     str = [str stringByReplacingOccurrencesOfString:lastChar withString:firstLetter];
     str = [str stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     fmyURL = [NSString stringWithFormat:@"%@%@", _gurl,str];
-    if ([fmyURL isEqual:@"ftp://192.168.1.188/f_feeds/"]) {
+    if ([fmyURL isEqual:@"ftp://172.14.0.32/f_feeds/"]) {
         [self.gbtn setEnabled:NO];
         self.gbtn.alpha = 0;
     } else {
@@ -342,7 +342,7 @@ NSString *flla ;
     
 }
 -(IBAction)fback:(id)sender{
-    if([_flblon.text isEqual:@"ftp://192.168.1.188/f_feeds/"]){
+    if([_flblon.text isEqual:@"ftp://172.14.0.32/f_feeds/"]){
         _gbtn.alpha = 0;
         _gbtn2.alpha = 0;
         

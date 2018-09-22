@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     @IBOutlet weak var tabView: UIView!
     @IBOutlet weak var btn1: UIButton!
@@ -16,7 +15,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     @IBOutlet weak var btn5: UIButton!
     
     
-    
+    let reachability = Reachability()!
     var viewControllers: [UIViewController]!
     
     var FeedsViewController: UIViewController!
@@ -35,7 +34,42 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
+        
+        reachability.whenReachable = { _ in
+            
+            DispatchQueue.main.async {
+                self.btn2.alpha = 1
+                self.btn4.alpha = 1
+                
+                if UserDefaults.standard.bool(forKey: "ISUSERLOGGEDIN") == false {
+                    self.btn1.center.x = self.tabView.center.x * 0.38
+                    self.btn5.center.x = self.tabView.center.x * 1.62
+                    self.btn2.alpha = 0
+                    self.btn4.alpha = 0
+                }
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            DispatchQueue.main.async {
+
+                let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
+                self.present(resultVc!, animated: true, completion: nil)
+                
+            }
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: Notification.Name.reachabilityChanged, object: reachability)
+        do{
+            try reachability.startNotifier()
+        }catch{
+            print("Failed")
+        }
+      
+            
+            
+            
+            
         BlueMovingView.bounds.size.width = (tabView.bounds.size.width * (98/1366))
         BlueMovingView.bounds.size.height = (tabView.bounds.size.height * (8/79))
         
@@ -75,13 +109,59 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         
         didPressTab(buttons[selectedIndex])
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        
+       /* if CheckInternet.Connection(){
+            DispatchQueue.main.async{
+                
+            //self.Alert(Message: "Connected")
+                
+            }
+        }
+            
+        else{
+            DispatchQueue.main.async{
+                let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
+                self.present(homeVc!, animated: true, completion: nil)
+           // self.Alert(Message: "Your Device is not connected with internet")
+            }
+            
+        }
+ */
+        
+        
+        if UserDefaults.standard.bool(forKey: "ISUSERLOGGEDIN") == true {
+            
+            self.btn2.alpha = 1
+            self.btn4.alpha = 1
+            
+        }else{
+            self.btn1.center.x = self.tabView.center.x * 0.38
+            self.btn5.center.x = self.tabView.center.x * 1.62
+            self.btn2.alpha = 0
+            self.btn4.alpha = 0
+           
+        
+        }
+        
+        
+    }
+    func Alert (Message: String){
+        
+        let alert = UIAlertController(title: "Alert", message: Message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+
     
 
     @IBAction func didPressTab(_ sender: UIButton) {
@@ -123,6 +203,32 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     }
     
     
+    @objc func internetChanged(note: Notification){
+        let reachability = note.object as! Reachability
+        if reachability.isReachable {
+            if reachability.isReachableViaWiFi{
+                DispatchQueue.main.async {
+    
+                }
+            }else{
+                DispatchQueue.main.async {
+                  
+                    let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
+                    self.present(resultVc!, animated: true, completion: nil)
+                      
+                }
+            }
+            
+            
+        }else{
+            DispatchQueue.main.async {
+                
+                let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
+                self.present(resultVc!, animated: true, completion: nil)
+              
+            }
+        }
+    }
     
     @IBAction func MovingBlueImageView(_ sender: UIButton)
     {

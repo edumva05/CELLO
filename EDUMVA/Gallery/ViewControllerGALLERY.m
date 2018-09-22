@@ -37,7 +37,7 @@ NSString *myURL;
     if (_gnexus) {
         [self nextUrl:_gnexus];
     } else {
-        [self nextUrl:@"ftp://192.168.1.188/g_gallery/"];
+        [self nextUrl:@"ftp://172.14.0.182/g_gallery/"];
         [self getPath:myURL];
     }
     
@@ -184,7 +184,7 @@ NSString *gallerylla ;
         int *get3 = [get2 integerValue];
         NSLog(@"%d",get3);
         
-        NSString *ftpLocation = [NSString stringWithFormat:@"ftp://192.168.1.188/g_gallery/%@_%d/%d.jpg", nameGet, get3, get3];
+        NSString *ftpLocation = [NSString stringWithFormat:@"ftp://172.14.0.32/g_gallery/%@_%d/%d.jpg", nameGet, get3, get3];
         
         NSLog(@"%@", ftpLocation);
         //variable to recieve data
@@ -248,7 +248,7 @@ NSString *gallerylla ;
 
 -(void)nextUrl :(NSString *)str {
     
-    if ([str  isEqual: @"ftp://192.168.1.188/g_gallery/"]) {
+    if ([str  isEqual: @"ftp://172.14.0.32/g_gallery/"]) {
         [self.glblhead setText:@"FTP"];
     } else {
         if ([str hasPrefix:@"ftp://"]) {
@@ -277,7 +277,7 @@ NSString *gallerylla ;
         [self.gallerycollectionView reloadData];
     }
     
-    if ([_gurl isEqual:@"ftp://192.168.1.188/g_gallery/"]) {
+    if ([_gurl isEqual:@"ftp://172.14.0.32/g_gallery/"]) {
         [self.gbtn setEnabled:NO];
         self.gbtn.alpha = 0;
     } else {
@@ -329,7 +329,7 @@ NSString *gallerylla ;
     
 }
 -(IBAction)gback:(id)sender{
-    if([_glblon.text isEqual:@"ftp://192.168.1.188/g_gallery/"]){
+    if([_glblon.text isEqual:@"ftp://172.14.0.32/g_gallery/"]){
         _gbtn.alpha = 0;
         _gbtn2.alpha = 0;
         

@@ -11,9 +11,10 @@
 		64A006D9213FD940001BA205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A006D8213FD940001BA205 /* AppDelegate.swift */; };
 		64A006DB213FD940001BA205 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A006DA213FD940001BA205 /* HomeViewController.swift */; };
 		64A006DE213FD940001BA205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A006DC213FD940001BA205 /* Main.storyboard */; };
-		64A006E1213FD940001BA205 /* EDUMVA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64A006DF213FD940001BA205 /* EDUMVA.xcdatamodeld */; };
 		64A006E3213FD942001BA205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A006E2213FD942001BA205 /* Assets.xcassets */; };
 		64A006E6213FD942001BA205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A006E4213FD942001BA205 /* LaunchScreen.storyboard */; };
+		E4252D5E2156386C006FAD31 /* NetworkErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4252D5D2156386C006FAD31 /* NetworkErrorViewController.swift */; };
+		E4252D602156520D006FAD31 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4252D5F2156520D006FAD31 /* ProfileViewController.swift */; };
 		E4389225214295D7000555B2 /* ViewControllerFTP.m in Sources */ = {isa = PBXBuildFile; fileRef = E4389223214295D7000555B2 /* ViewControllerFTP.m */; };
 		E4389226214295D7000555B2 /* webViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4389224214295D7000555B2 /* webViewViewController.m */; };
 		E438922B21429943000555B2 /* ViewControllerGALLERY.m in Sources */ = {isa = PBXBuildFile; fileRef = E438922821429942000555B2 /* ViewControllerGALLERY.m */; };
@@ -22,7 +23,11 @@
 		E438923421429B89000555B2 /* homework.m in Sources */ = {isa = PBXBuildFile; fileRef = E438923221429B89000555B2 /* homework.m */; };
 		E455AE392151105500DF29D6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455AE382151105500DF29D6 /* ResultViewController.swift */; };
 		E455AE3B2151107A00DF29D6 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455AE3A2151107A00DF29D6 /* CircularProgressView.swift */; };
+		E47FA4112152C6C4001A8E98 /* CheckInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */; };
+		E499DF5C21555B31000F691D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499DF5B21555B31000F691D /* Reachability.swift */; };
+		E4A749C021550D840096AC11 /* Edumva.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4A749BE21550D830096AC11 /* Edumva.xcdatamodeld */; };
 		E4CD4359214015AC00C1FEB5 /* ViewControllerFEEDS.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CD4358214015AC00C1FEB5 /* ViewControllerFEEDS.m */; };
+		E4D0C3642152A79E00FC8FAA /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D0C3632152A79E00FC8FAA /* FoodViewController.swift */; };
 		E564E66021400CEC00A091DF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564E65F21400CEC00A091DF /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,10 +37,11 @@
 		64A006D8213FD940001BA205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64A006DA213FD940001BA205 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		64A006DD213FD940001BA205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		64A006E0213FD940001BA205 /* EDUMVA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EDUMVA.xcdatamodel; sourceTree = "<group>"; };
 		64A006E2213FD942001BA205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64A006E5213FD942001BA205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64A006E7213FD942001BA205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4252D5D2156386C006FAD31 /* NetworkErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorViewController.swift; sourceTree = "<group>"; };
+		E4252D5F2156520D006FAD31 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E4389221214295D7000555B2 /* ViewControllerFTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerFTP.h; sourceTree = "<group>"; };
 		E4389222214295D7000555B2 /* webViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewViewController.h; sourceTree = "<group>"; };
 		E4389223214295D7000555B2 /* ViewControllerFTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerFTP.m; sourceTree = "<group>"; };
@@ -50,9 +56,13 @@
 		E438923221429B89000555B2 /* homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homework.m; sourceTree = "<group>"; };
 		E455AE382151105500DF29D6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E455AE3A2151107A00DF29D6 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternetConnection.swift; sourceTree = "<group>"; };
+		E499DF5B21555B31000F691D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		E4A749BF21550D830096AC11 /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
 		E4CD4356214015AC00C1FEB5 /* EDUMVA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EDUMVA-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4CD4357214015AC00C1FEB5 /* ViewControllerFEEDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerFEEDS.h; sourceTree = "<group>"; };
 		E4CD4358214015AC00C1FEB5 /* ViewControllerFEEDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerFEEDS.m; sourceTree = "<group>"; };
+		E4D0C3632152A79E00FC8FAA /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		E564E65F21400CEC00A091DF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,14 +102,19 @@
 				E438922021429589000555B2 /* FTP */,
 				E4CD435A214015B800C1FEB5 /* Feeds */,
 				64A006D8213FD940001BA205 /* AppDelegate.swift */,
+				E4252D5D2156386C006FAD31 /* NetworkErrorViewController.swift */,
 				641F756A214FE46800343611 /* LoginViewController.swift */,
+				E4D0C3632152A79E00FC8FAA /* FoodViewController.swift */,
+				E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */,
+				E499DF5B21555B31000F691D /* Reachability.swift */,
 				64A006DA213FD940001BA205 /* HomeViewController.swift */,
 				E564E65F21400CEC00A091DF /* TabBarController.swift */,
 				64A006DC213FD940001BA205 /* Main.storyboard */,
+				E4252D5F2156520D006FAD31 /* ProfileViewController.swift */,
+				E4A749BE21550D830096AC11 /* Edumva.xcdatamodeld */,
 				64A006E2213FD942001BA205 /* Assets.xcassets */,
 				64A006E4213FD942001BA205 /* LaunchScreen.storyboard */,
 				64A006E7213FD942001BA205 /* Info.plist */,
-				64A006DF213FD940001BA205 /* EDUMVA.xcdatamodeld */,
 			);
 			path = EDUMVA;
 			sourceTree = "<group>";
@@ -228,19 +243,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E455AE392151105500DF29D6 /* ResultViewController.swift in Sources */,
+				E4D0C3642152A79E00FC8FAA /* FoodViewController.swift in Sources */,
 				641F756B214FE46800343611 /* LoginViewController.swift in Sources */,
+				E47FA4112152C6C4001A8E98 /* CheckInternetConnection.swift in Sources */,
 				E438923321429B89000555B2 /* webHomework.m in Sources */,
 				E438922C21429943000555B2 /* GALLERYViewController.m in Sources */,
+				E499DF5C21555B31000F691D /* Reachability.swift in Sources */,
 				64A006DB213FD940001BA205 /* HomeViewController.swift in Sources */,
 				E438922B21429943000555B2 /* ViewControllerGALLERY.m in Sources */,
+				E4252D602156520D006FAD31 /* ProfileViewController.swift in Sources */,
 				E564E66021400CEC00A091DF /* TabBarController.swift in Sources */,
+				E4A749C021550D840096AC11 /* Edumva.xcdatamodeld in Sources */,
 				E438923421429B89000555B2 /* homework.m in Sources */,
+				E4252D5E2156386C006FAD31 /* NetworkErrorViewController.swift in Sources */,
 				E4CD4359214015AC00C1FEB5 /* ViewControllerFEEDS.m in Sources */,
 				E4389225214295D7000555B2 /* ViewControllerFTP.m in Sources */,
 				E455AE3B2151107A00DF29D6 /* CircularProgressView.swift in Sources */,
 				E4389226214295D7000555B2 /* webViewViewController.m in Sources */,
 				64A006D9213FD940001BA205 /* AppDelegate.swift in Sources */,
-				64A006E1213FD940001BA205 /* EDUMVA.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,13 +465,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		64A006DF213FD940001BA205 /* EDUMVA.xcdatamodeld */ = {
+		E4A749BE21550D830096AC11 /* Edumva.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				64A006E0213FD940001BA205 /* EDUMVA.xcdatamodel */,
+				E4A749BF21550D830096AC11 /* CoreDataDemo.xcdatamodel */,
 			);
-			currentVersion = 64A006E0213FD940001BA205 /* EDUMVA.xcdatamodel */;
-			path = EDUMVA.xcdatamodeld;
+			currentVersion = E4A749BF21550D830096AC11 /* CoreDataDemo.xcdatamodel */;
+			path = Edumva.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

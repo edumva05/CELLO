@@ -14,7 +14,11 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     @IBOutlet weak var btn4: UIButton!
     @IBOutlet weak var btn5: UIButton!
     
+    @IBOutlet weak var sidebarBtn: UIButton!
     
+    @IBOutlet weak var sideBar: UIImageView!
+    @IBOutlet weak var effectBack: UIButton!
+    @IBOutlet weak var blurEffect: UIVisualEffectView!
     let reachability = Reachability()!
     var viewControllers: [UIViewController]!
     
@@ -32,11 +36,16 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     
     @IBOutlet weak var BlueMovingView: UIImageView!
     
+    var sideBarOriginX : CGFloat = 0.0
+    var sideBarOriginY : CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         
         
+        sideBarOriginX = self.sideBar.frame.origin.x
+        sideBarOriginY = self.sideBar.frame.origin.y
+        blurEffect.alpha = 0
+        effectBack.alpha = 0
         reachability.whenReachable = { _ in
             
             DispatchQueue.main.async {
@@ -53,7 +62,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         }
         reachability.whenUnreachable = { _ in
             DispatchQueue.main.async {
-
+                
                 let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
                 self.present(resultVc!, animated: true, completion: nil)
                 
@@ -65,21 +74,21 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         }catch{
             print("Failed")
         }
-      
-            
-            
-            
-            
+        
+        
+        
+        
+        
         BlueMovingView.bounds.size.width = (tabView.bounds.size.width * (98/1366))
         BlueMovingView.bounds.size.height = (tabView.bounds.size.height * (8/79))
         
-
         
-   
-    /*    BlueMovingView.center.x = tabView.center.x
-        BlueMovingView.center.y = tabView.center.y
-       
-       */
+        
+        
+        /*    BlueMovingView.center.x = tabView.center.x
+         BlueMovingView.center.y = tabView.center.y
+         
+         */
         tabView.layer.applySketchShadow(
             color: .black,
             alpha: 0.7,
@@ -87,7 +96,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
             y: 0,
             blur: 16,
             spread: 0)
- 
+        
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -108,33 +117,89 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         //Initallly select a ViewController
         
         didPressTab(buttons[selectedIndex])
-
+        
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func sideBar(_ sender: UIButton)
+    {
+        self.sidebarBtn.alpha = 0
+        UIView.animate(withDuration: 0.3)
+        {
+            self.sideBar.frame.origin.x = self.view.frame.origin.x * 1.075
+            self.sideBar.frame.origin.y = self.view.bounds.midY * 0.075
+            self.blurEffect.alpha = 0.925
+            
+            
+            self.effectBack.alpha = 1
+            
+            
+            
+            
+        }
+        
+        
+        self.viewDisplay.center = CGPoint(x: self.view.bounds.midX,
+                                          y: self.view.bounds.midY);
+        self.viewDisplay.frame.size.width = self.viewDisplay.bounds.size.width * 0.9
+        self.viewDisplay.center = CGPoint(x: self.view.bounds.midX,
+                                          y: self.view.bounds.midY);
+        self.viewDisplay.frame.size.height = self.viewDisplay.bounds.size.height * 0.9
+        self.viewDisplay.center = CGPoint(x: self.view.bounds.midX,
+                                          y: self.view.bounds.midY);
+        
+        
+        
+    }
+     @IBAction func backEffect(_ sender: UIButton)
+    {
+        UIView.animate(withDuration: 0.3)
+        {
+            self.sidebarBtn.alpha = 1
+            self.blurEffect.alpha = 0
+            
+            self.effectBack.alpha = 0
+            self.sideBar.frame.origin.x = self.sideBarOriginX
+            self.sideBar.frame.origin.y = self.sideBarOriginY
+            
+            
+        }
+        self.viewDisplay.center = CGPoint(x: self.view.bounds.midX,
+                                          y: self.view.bounds.midY);
+        self.viewDisplay.frame.size.width = self.view.bounds.size.width
+        self.viewDisplay.center = CGPoint(x: self.view.bounds.midX,
+                                          y: self.view.bounds.midY);
+        self.viewDisplay.frame.size.height = self.view.bounds.size.height
+        self.viewDisplay.center = CGPoint(x: self.view.bounds.midX,
+                                          y: self.view.bounds.midY);
+    }
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         
-       /* if CheckInternet.Connection(){
-            DispatchQueue.main.async{
-                
-            //self.Alert(Message: "Connected")
-                
-            }
-        }
-            
-        else{
-            DispatchQueue.main.async{
-                let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
-                self.present(homeVc!, animated: true, completion: nil)
-           // self.Alert(Message: "Your Device is not connected with internet")
-            }
-            
-        }
- */
+        /* if CheckInternet.Connection(){
+         DispatchQueue.main.async{
+         
+         //self.Alert(Message: "Connected")
+         
+         }
+         }
+         
+         else{
+         DispatchQueue.main.async{
+         let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
+         self.present(homeVc!, animated: true, completion: nil)
+         // self.Alert(Message: "Your Device is not connected with internet")
+         }
+         
+         }
+         */
         
         
         if UserDefaults.standard.bool(forKey: "ISUSERLOGGEDIN") == true {
@@ -147,8 +212,8 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
             self.btn5.center.x = self.tabView.center.x * 1.62
             self.btn2.alpha = 0
             self.btn4.alpha = 0
-           
-        
+            
+            
         }
         
         
@@ -161,35 +226,35 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         
         
     }
-
     
-
+    
+    
     @IBAction func didPressTab(_ sender: UIButton) {
         
-    
-   
         
-     
+        
+        
+        
         let previousIndex = selectedIndex
-  
-             print(selectedIndex)
+        
+        print(selectedIndex)
         selectedIndex = sender.tag
-             print(selectedIndex)
-      
+        print(selectedIndex)
+        
         buttons[previousIndex].isSelected = false
         
-
+        
         let previousVC = viewControllers[previousIndex]
-       
-       
+        
+        
         previousVC.willMove(toParentViewController: nil)
         previousVC.view.removeFromSuperview()
         previousVC.removeFromParentViewController()
         
-       
+        
         sender.isSelected = true
         
-     
+        
         let vc = viewControllers[selectedIndex]
         
         addChildViewController(vc)
@@ -197,7 +262,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         
         vc.view.frame = viewDisplay.bounds
         viewDisplay.addSubview(vc.view)
-       
+        
         vc.didMove(toParentViewController: self)
         
     }
@@ -208,14 +273,14 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         if reachability.isReachable {
             if reachability.isReachableViaWiFi{
                 DispatchQueue.main.async {
-    
+                    
                 }
             }else{
                 DispatchQueue.main.async {
-                  
+                    
                     let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
                     self.present(resultVc!, animated: true, completion: nil)
-                      
+                    
                 }
             }
             
@@ -225,7 +290,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
                 
                 let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "Network")
                 self.present(resultVc!, animated: true, completion: nil)
-              
+                
             }
         }
     }
@@ -261,28 +326,30 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         }
         if(sender.tag == 4)
         {
+            
             btn5.setImage(#imageLiteral(resourceName: "ProfileBlue"), for: .selected)
+           
         }
         
         UIView.animate(withDuration: 0.30, delay: 0, options: [UIViewAnimationOptions.curveEaseInOut], animations: {
-           
+            
             () -> Void in
             
             self.BlueMovingView.center.x = sender.center.x
         }, completion: { (finished) -> Void in
-         
+            
         })
-    
+        
         
     }
     
-
     
     
     
     
     
-
+    
+    
 }
 
 extension CALayer {

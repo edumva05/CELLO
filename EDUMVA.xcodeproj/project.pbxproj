@@ -21,11 +21,17 @@
 		E438922C21429943000555B2 /* GALLERYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E438922A21429942000555B2 /* GALLERYViewController.m */; };
 		E438923321429B89000555B2 /* webHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = E438922F21429B88000555B2 /* webHomework.m */; };
 		E438923421429B89000555B2 /* homework.m in Sources */ = {isa = PBXBuildFile; fileRef = E438923221429B89000555B2 /* homework.m */; };
+		E43EF1572157383D008E9E4C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF1562157383D008E9E4C /* AboutViewController.swift */; };
+		E43EF15D21574BD9008E9E4C /* SocialNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF15C21574BD8008E9E4C /* SocialNetworkViewController.swift */; };
+		E43EF16021574DA0008E9E4C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43EF15F21574D9E008E9E4C /* WebKit.framework */; };
+		E43EF16221574DEC008E9E4C /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF16121574DEC008E9E4C /* ExamViewController.swift */; };
 		E455AE392151105500DF29D6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455AE382151105500DF29D6 /* ResultViewController.swift */; };
 		E455AE3B2151107A00DF29D6 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455AE3A2151107A00DF29D6 /* CircularProgressView.swift */; };
 		E47FA4112152C6C4001A8E98 /* CheckInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */; };
 		E499DF5C21555B31000F691D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499DF5B21555B31000F691D /* Reachability.swift */; };
 		E4A749C021550D840096AC11 /* Edumva.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4A749BE21550D830096AC11 /* Edumva.xcdatamodeld */; };
+		E4AC8F112156B0E600F48996 /* CalendarVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC8F0F2156B0E600F48996 /* CalendarVariables.swift */; };
+		E4AC8F122156B0E600F48996 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC8F102156B0E600F48996 /* CalendarViewController.swift */; };
 		E4CD4359214015AC00C1FEB5 /* ViewControllerFEEDS.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CD4358214015AC00C1FEB5 /* ViewControllerFEEDS.m */; };
 		E4D0C3642152A79E00FC8FAA /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D0C3632152A79E00FC8FAA /* FoodViewController.swift */; };
 		E564E66021400CEC00A091DF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564E65F21400CEC00A091DF /* TabBarController.swift */; };
@@ -54,11 +60,17 @@
 		E438923021429B88000555B2 /* homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homework.h; sourceTree = "<group>"; };
 		E438923121429B88000555B2 /* webHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webHomework.h; sourceTree = "<group>"; };
 		E438923221429B89000555B2 /* homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homework.m; sourceTree = "<group>"; };
+		E43EF1562157383D008E9E4C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E43EF15C21574BD8008E9E4C /* SocialNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkViewController.swift; sourceTree = "<group>"; };
+		E43EF15F21574D9E008E9E4C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E43EF16121574DEC008E9E4C /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		E455AE382151105500DF29D6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E455AE3A2151107A00DF29D6 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternetConnection.swift; sourceTree = "<group>"; };
 		E499DF5B21555B31000F691D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E4A749BF21550D830096AC11 /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
+		E4AC8F0F2156B0E600F48996 /* CalendarVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVariables.swift; sourceTree = "<group>"; };
+		E4AC8F102156B0E600F48996 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		E4CD4356214015AC00C1FEB5 /* EDUMVA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EDUMVA-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4CD4357214015AC00C1FEB5 /* ViewControllerFEEDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerFEEDS.h; sourceTree = "<group>"; };
 		E4CD4358214015AC00C1FEB5 /* ViewControllerFEEDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerFEEDS.m; sourceTree = "<group>"; };
@@ -71,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43EF16021574DA0008E9E4C /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +95,7 @@
 			children = (
 				64A006D7213FD940001BA205 /* EDUMVA */,
 				64A006D6213FD940001BA205 /* Products */,
+				E43EF15E21574D9E008E9E4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +110,7 @@
 		64A006D7213FD940001BA205 /* EDUMVA */ = {
 			isa = PBXGroup;
 			children = (
+				E4AC8F0E2156B0E600F48996 /* Calendar */,
 				E455AE3C2151108900DF29D6 /* Results */,
 				E438922E21429B62000555B2 /* HomeWork */,
 				E438922D21429946000555B2 /* Gallery */,
@@ -104,13 +119,16 @@
 				64A006D8213FD940001BA205 /* AppDelegate.swift */,
 				E4252D5D2156386C006FAD31 /* NetworkErrorViewController.swift */,
 				641F756A214FE46800343611 /* LoginViewController.swift */,
+				E43EF16121574DEC008E9E4C /* ExamViewController.swift */,
 				E4D0C3632152A79E00FC8FAA /* FoodViewController.swift */,
 				E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */,
+				E43EF1562157383D008E9E4C /* AboutViewController.swift */,
 				E499DF5B21555B31000F691D /* Reachability.swift */,
+				E43EF15C21574BD8008E9E4C /* SocialNetworkViewController.swift */,
 				64A006DA213FD940001BA205 /* HomeViewController.swift */,
+				E4252D5F2156520D006FAD31 /* ProfileViewController.swift */,
 				E564E65F21400CEC00A091DF /* TabBarController.swift */,
 				64A006DC213FD940001BA205 /* Main.storyboard */,
-				E4252D5F2156520D006FAD31 /* ProfileViewController.swift */,
 				E4A749BE21550D830096AC11 /* Edumva.xcdatamodeld */,
 				64A006E2213FD942001BA205 /* Assets.xcassets */,
 				64A006E4213FD942001BA205 /* LaunchScreen.storyboard */,
@@ -152,6 +170,14 @@
 			path = HomeWork;
 			sourceTree = "<group>";
 		};
+		E43EF15E21574D9E008E9E4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E43EF15F21574D9E008E9E4C /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E455AE3C2151108900DF29D6 /* Results */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +185,15 @@
 				E455AE382151105500DF29D6 /* ResultViewController.swift */,
 			);
 			path = Results;
+			sourceTree = "<group>";
+		};
+		E4AC8F0E2156B0E600F48996 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				E4AC8F0F2156B0E600F48996 /* CalendarVariables.swift */,
+				E4AC8F102156B0E600F48996 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		E4CD435A214015B800C1FEB5 /* Feeds */ = {
@@ -244,15 +279,19 @@
 			files = (
 				E455AE392151105500DF29D6 /* ResultViewController.swift in Sources */,
 				E4D0C3642152A79E00FC8FAA /* FoodViewController.swift in Sources */,
+				E43EF1572157383D008E9E4C /* AboutViewController.swift in Sources */,
 				641F756B214FE46800343611 /* LoginViewController.swift in Sources */,
 				E47FA4112152C6C4001A8E98 /* CheckInternetConnection.swift in Sources */,
+				E43EF16221574DEC008E9E4C /* ExamViewController.swift in Sources */,
 				E438923321429B89000555B2 /* webHomework.m in Sources */,
 				E438922C21429943000555B2 /* GALLERYViewController.m in Sources */,
 				E499DF5C21555B31000F691D /* Reachability.swift in Sources */,
 				64A006DB213FD940001BA205 /* HomeViewController.swift in Sources */,
 				E438922B21429943000555B2 /* ViewControllerGALLERY.m in Sources */,
+				E4AC8F112156B0E600F48996 /* CalendarVariables.swift in Sources */,
 				E4252D602156520D006FAD31 /* ProfileViewController.swift in Sources */,
 				E564E66021400CEC00A091DF /* TabBarController.swift in Sources */,
+				E4AC8F122156B0E600F48996 /* CalendarViewController.swift in Sources */,
 				E4A749C021550D840096AC11 /* Edumva.xcdatamodeld in Sources */,
 				E438923421429B89000555B2 /* homework.m in Sources */,
 				E4252D5E2156386C006FAD31 /* NetworkErrorViewController.swift in Sources */,
@@ -261,6 +300,7 @@
 				E455AE3B2151107A00DF29D6 /* CircularProgressView.swift in Sources */,
 				E4389226214295D7000555B2 /* webViewViewController.m in Sources */,
 				64A006D9213FD940001BA205 /* AppDelegate.swift in Sources */,
+				E43EF15D21574BD9008E9E4C /* SocialNetworkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

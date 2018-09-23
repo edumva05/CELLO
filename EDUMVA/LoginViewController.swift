@@ -202,7 +202,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
         
         
-        guard let url = URL(string: "http://172.14.0.43/edumva/Register.php?method=login&username="+user!+"&password="+password!+"&inputuser="+inputuser)
+        guard let url = URL(string: "http://10.1.1.32/edumva/Register.php?method=login&username="+user!+"&password="+password!+"&inputuser="+inputuser)
             
             else { return }
         

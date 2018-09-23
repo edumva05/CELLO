@@ -202,7 +202,7 @@ class FoodViewController: UIViewController {
         
     
         
-        guard let url = URL(string: "http://172.14.0.43/edumva/register.php?method=getfooditems&tablename=food&fieldname1=breakfast&fieldname2=lunch&fieldname3=refreshment&fieldname4=dinner&fieldname5=breakfast_img&fieldname6=lunch_img&fieldname7=refreshment_img&fieldname8=dinner_img&condition=(date=\(getDate))and(month=\(getMonth))and(year=\(getYear))")
+        guard let url = URL(string: "http://10.1.1.32/edumva/register.php?method=getfooditems&tablename=food&fieldname1=breakfast&fieldname2=lunch&fieldname3=refreshment&fieldname4=dinner&fieldname5=breakfast_img&fieldname6=lunch_img&fieldname7=refreshment_img&fieldname8=dinner_img&condition=(date=\(getDate))and(month=\(getMonth))and(year=\(getYear))")
             
             
             

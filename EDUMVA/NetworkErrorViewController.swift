@@ -47,7 +47,8 @@ class NetworkErrorViewController: UIViewController {
             }else{
                 DispatchQueue.main.async {
                     
-                   
+                    let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeHere")
+                    self.present(resultVc!, animated: true, completion: nil)
                 }
             }
             

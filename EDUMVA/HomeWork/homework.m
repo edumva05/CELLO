@@ -29,7 +29,7 @@
     if (_nexusH) {
         [self nextUrl:_nexusH];
     } else {
-        [self nextUrl:@"ftp://172.14.0.32/h_work/"];
+        [self nextUrl:@"ftp://10.1.1.172/h_work/"];
     }
     
     _webViewH.alpha = 0;
@@ -105,7 +105,7 @@ NSString *llaH ;
 
 
 -(void)nextUrl :(NSString *)str {
-    if ([str  isEqual: @"ftp://172.14.0.32/h_work/"]) {
+    if ([str  isEqual: @"ftp://10.1.1.172/h_work/"]) {
         [self.lblheadH setText:@"HOMEWORK"];
     } else {
         if ([str hasPrefix:@"ftp://"]) {
@@ -132,7 +132,7 @@ NSString *llaH ;
         [self.collection reloadData];
     }
     
-    if ([_urlH isEqual:@"ftp://172.14.0.32/h_work/"]) {
+    if ([_urlH isEqual:@"ftp://10.1.1.172/h_work/"]) {
         [self.btnH setEnabled:NO];
         self.btnH.alpha = 0;
     } else {
@@ -153,7 +153,7 @@ NSString *llaH ;
     str = [str stringByReplacingOccurrencesOfString:lastChar withString:firstLetter];
     str = [str stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *myURL = [NSString stringWithFormat:@"%@%@", _urlH,str];
-    if ([myURL isEqual:@"ftp://172.14.0.32/h_work/"]) {
+    if ([myURL isEqual:@"ftp://10.1.1.172/h_work/"]) {
         [self.btnH setEnabled:NO];
         self.btnH.alpha = 0;
     } else {
@@ -171,7 +171,7 @@ NSString *llaH ;
 }
 
 -(IBAction)back:(id)sender{
-    if([_lblonH.text isEqual:@"ftp://172.14.0.32/h_work/"]){
+    if([_lblonH.text isEqual:@"ftp://10.1.1.172/h_work/"]){
         _btnH.alpha = 0;
         _btn2H.alpha = 0;
         

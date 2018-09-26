@@ -11,7 +11,6 @@
 #import "webViewViewController.h"
 
 
-
 @interface ViewControllerFTP ()
 {
     NSArray *array;
@@ -34,7 +33,7 @@
     }
     
     _webView.alpha = 0;
-    //  NSLog();
+
     _btn2.alpha = 0;
     
 }

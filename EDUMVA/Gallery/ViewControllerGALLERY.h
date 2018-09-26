@@ -42,6 +42,7 @@
 //@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *gload;
 //@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *load;
+@property (weak, nonatomic) IBOutlet UIButton *btng;
 
 
 

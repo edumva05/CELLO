@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-
+var getID = ""
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async{
             let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeHere")
             self.present(homeVc!, animated: true, completion: nil)
-
+            
         }
     }
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -120,7 +120,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         UIAccessibilityRequestGuidedAccessSession(true){
             success in
-            print("Request guided access success \(success)")
+            //nslog("Request guided access success \(success)")
             
             self.txt1.delegate = self
             self.txt2.delegate = self
@@ -199,7 +199,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         var inputuser = "student"
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    
+        
         
         
         guard let url = URL(string: "http://10.1.1.32/edumva/Register.php?method=login&username="+user!+"&password="+password!+"&inputuser="+inputuser)
@@ -207,17 +207,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             else { return }
         
         
-        print(inputuser)
+        //nslog(inputuser)
         
         let session = URLSession.shared
         session.dataTask(with: url) { (data, response, error) in
             if let response = response {
-                print(response)
+                //nslog(response)
                 
             }
             
             if let data = data {
-                print(data)
+                //nslog(data)
                 do {
                     
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
@@ -235,6 +235,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         let studentmobileno : URL
                         let studentemail : URL
                         let studentaddress : URL
+                        let studentsection : URL
                         
                         
                         
@@ -251,26 +252,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             case studentmobileno = "studentmobileno"
                             case studentemail = "studentemail"
                             case studentaddress = "studentaddress"
+                            case studentsection = "studentsection"
+                            
                         }
                     }
                     
                     guard let output = try? JSONDecoder().decode(outp.self, from: data) else {
-                        print("Error: Couldn't decode data into Blog")
+                        //nslog("Error: Couldn't decode data into Blog")
                         return
                     }
                     
-                    print("Respone: \(output.response)")
-                    print("gotopage: \(output.gotopage)")
-                    print("studentid: \(output.studentid)")
-                    print("studentname: \(output.studentname)")
-                    print("studentusername: \(output.studentusername)")
-                    print("studentclass:  \(output.studentclass)")
-                    print("studentfathersname:  \(output.studentfathersname)")
-                    print("studentmothersname:  \(output.studentmothersname)")
-                    print("studentdob:  \(output.studentdob)")
-                    print("studentmobileno:  \(output.studentmobileno)")
-                    print("studentemail:  \(output.studentemail)")
-                    print("studentaddress:  \(output.studentaddress)")
+                    //nslog("Respone: \(output.response)")
+                    //nslog("gotopage: \(output.gotopage)")
+                    //nslog("studentid: \(output.studentid)")
+                    //nslog("studentname: \(output.studentname)")
+                    //nslog("studentusername: \(output.studentusername)")
+                    //nslog("studentclass:  \(output.studentclass)")
+                    //nslog("studentfathersname:  \(output.studentfathersname)")
+                    //nslog("studentmothersname:  \(output.studentmothersname)")
+                    //nslog("studentdob:  \(output.studentdob)")
+                    //nslog("studentmobileno:  \(output.studentmobileno)")
+                    //nslog("studentemail:  \(output.studentemail)")
+                    //nslog("studentaddress:  \(output.studentaddress)")
                     
                     let otp = "Response: \(output.response)"
                     let gotopage = "gotopage: \(output.gotopage)"
@@ -280,12 +283,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         
                         
                         
-                        print("LoggedIn As Student")
+                        //nslog("LoggedIn As Student")
                         
                         //navigate to home screen
                         DispatchQueue.main.async{
-                        UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
-                        let homeVc = storyboard.instantiateViewController(withIdentifier: "WelcomeHere")
+                            UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
+                            let homeVc = storyboard.instantiateViewController(withIdentifier: "WelcomeHere")
                             self.present(homeVc, animated: true, completion: nil)
                         }
                         //   UserDefaults.standard.set(self.txt1.text, forKey: "text")
@@ -307,6 +310,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             newUser.setValue("\(output.studentmobileno)", forKey: "phno")
                             newUser.setValue("\(output.studentemail)", forKey: "email")
                             newUser.setValue("\(output.studentaddress)", forKey: "address")
+                            newUser.setValue("\(output.studentsection)", forKey: "section")
                             
                             
                             do {
@@ -315,7 +319,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 
                             } catch {
                                 
-                                print("Failed saving")
+                                //nslog("Failed saving")
                             }
                             
                             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
@@ -335,26 +339,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                     let corephno = data.value(forKey: "phno")
                                     let coreemail = data.value(forKey: "email")
                                     let coreaddress = data.value(forKey: "address")
-                                    if((coreid == nil) || (corename == nil) || (coreuser == nil) || (coreclass == nil) || (corefname == nil) || (coremname == nil) || (coredob == nil) || (corephno == nil) || (coreemail == nil) || (coreaddress == nil)){
+                                    let coresection = data.value(forKey: "section")
                                     
+                                    if((coreid == nil) || (corename == nil) || (coreuser == nil) || (coreclass == nil) || (corefname == nil) || (coremname == nil) || (coredob == nil) || (corephno == nil) || (coreemail == nil) || (coreaddress == nil) || (coresection == nil)){
+                                        
                                     }else{
-                                    print(coreid as! String)
-                                    print(corename as! String)
-                                        print(coreuser as! String)
-                                        print(coreclass as! String)
-                                        print(corefname as! String)
-                                        print(coremname as! String)
-                                        print(coredob as! String)
-                                        print(corephno as! String)
-                                        print(coreemail as! String)
-                                        print(coreaddress as! String)
-
+                                        //nslog(coreid as! String)
+                                        //nslog(corename as! String)
+                                        //nslog(coreuser as! String)
+                                        //nslog(coreclass as! String)
+                                        //nslog(corefname as! String)
+                                        //nslog(coremname as! String)
+                                        //nslog(coredob as! String)
+                                        //nslog(corephno as! String)
+                                        //nslog(coreemail as! String)
+                                        //nslog(coreaddress as! String)
+                                        //nslog(coresection as! String)
+                                        getID = coreid as! String
                                     }
                                 }
                                 
                             } catch {
                                 
-                                print("Failed")
+                                //nslog("Failed")
                             }
                         }
                     } else {
@@ -367,7 +374,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     
                 } catch {
-                    print(error)
+                    //nslog(error)
                     
                 }
                 

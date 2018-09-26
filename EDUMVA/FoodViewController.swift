@@ -6,6 +6,14 @@
 //
 
 import UIKit
+var sub1 = ""
+var sub2 = ""
+var sub3 = ""
+var sub4 = ""
+var total1 = ""
+var total2 = ""
+var total3 = ""
+var total4 = ""
 let date = Date()
 let formatter = DateFormatter()
 let FoodDate = Date()
@@ -35,7 +43,7 @@ class FoodViewController: UIViewController {
         }
     }
     override func viewDidLoad() {
-        print(date)
+        //nslog(date)
         super.viewDidLoad()
         
         let resultVc = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeHere")
@@ -250,13 +258,13 @@ class FoodViewController: UIViewController {
                     
                     
                     guard let output = try? JSONDecoder().decode(outp.self, from: data) else {
-                        print("Error: Couldn't decode data into Blog")
+                        //nslog("Error: Couldn't decode data into Blog")
                         return
                     }
                     
                     var path = ""
                     path = "http://192.168.1.166/edumva/\(output.resultfield5)"
-                    print(path)
+                    //nslog(path)
                     DispatchQueue.main.async
                         {
                             
@@ -276,25 +284,25 @@ class FoodViewController: UIViewController {
                             
                             
                             
-                            print("**************************************************************************************************************")
+                            //nslog("**************************************************************************************************************")
                             
                             
                             
                             
                             
-                            print("!@#$%^&*)*&^%$#!@#$%^&*())(*&^%$#!@$%^)(*!@#$%^*)&^%$#!@#$%^&*()*&@!@#$%^&*()(*&^#@!!@#$%^&*()%$#@!@#$%^&*())(%#@!resultfield1: \(output.resultfield1)")
-                            print("resultfield2: \(output.resultfield2)")
-                            print("resultfield3: \(output.resultfield3)")
-                            print("resultfield4: \(output.resultfield4)")
-                            print("resultfield5: \(output.resultfield5)")
+                            //nslog("!@#$%^&*)*&^%$#!@#$%^&*())(*&^%$#!@$%^)(*!@#$%^*)&^%$#!@#$%^&*()*&@!@#$%^&*()(*&^#@!!@#$%^&*()%$#@!@#$%^&*())(%#@!resultfield1: \(output.resultfield1)")
+                            //nslog("resultfield2: \(output.resultfield2)")
+                            //nslog("resultfield3: \(output.resultfield3)")
+                            //nslog("resultfield4: \(output.resultfield4)")
+                            //nslog("resultfield5: \(output.resultfield5)")
                     }
-                    //  print(temp)
+                    //  //nslog(temp)
                     
                     
                     
                     
                 } catch {
-                    print(error)
+                    //nslog(error)
                     
                 }
                 
@@ -302,7 +310,7 @@ class FoodViewController: UIViewController {
             }
             }.resume()
         
-    }//edumva.byethost12.com
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

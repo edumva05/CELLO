@@ -30,7 +30,7 @@ class NetworkErrorViewController: UIViewController {
         do{
             try reachability.startNotifier()
         }catch{
-            print("Failed")
+            //nslog("Failed")
         }
         // Do any additional setup after loading the view.
     }

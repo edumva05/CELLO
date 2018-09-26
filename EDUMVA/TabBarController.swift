@@ -14,11 +14,14 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     @IBOutlet weak var btn4: UIButton!
     @IBOutlet weak var btn5: UIButton!
     
+    @IBOutlet weak var username: UILabel!
     @IBOutlet weak var sidebarBtn: UIButton!
+    @IBOutlet weak var sideBar: UIView!
     
-    @IBOutlet weak var sideBar: UIImageView!
+    
     @IBOutlet weak var effectBack: UIButton!
     @IBOutlet weak var blurEffect: UIVisualEffectView!
+    
     let reachability = Reachability()!
     var viewControllers: [UIViewController]!
     
@@ -38,9 +41,29 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     
     var sideBarOriginX : CGFloat = 0.0
     var sideBarOriginY : CGFloat = 0.0
+    
+    
+    @IBAction func exit(_ sender: Any) {
+        _Exit(0)
+    }
+    //hello
+    @IBOutlet weak var logOut: UIButton!
+    @IBAction func logOutAct(_ sender: Any)
+    {
+        DispatchQueue.main.async{
+            if UserDefaults.standard.bool(forKey: "ISUSERLOGGEDIN") == true {
+                UserDefaults.standard.set(false, forKey: "ISUSERLOGGEDIN")
+                
+                let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeHere")
+                self.present(homeVc!, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         sideBarOriginX = self.sideBar.frame.origin.x
         sideBarOriginY = self.sideBar.frame.origin.y
@@ -57,6 +80,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
                     self.btn5.center.x = self.tabView.center.x * 1.62
                     self.btn2.alpha = 0
                     self.btn4.alpha = 0
+                    self.logOut.alpha = 0;
                 }
             }
         }
@@ -72,7 +96,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         do{
             try reachability.startNotifier()
         }catch{
-            print("Failed")
+            //nslog("Failed")
         }
         
         
@@ -85,10 +109,10 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         
         
         
-        /*    BlueMovingView.center.x = tabView.center.x
+            BlueMovingView.center.x = tabView.center.x
          BlueMovingView.center.y = tabView.center.y
          
-         */
+        
         tabView.layer.applySketchShadow(
             color: .black,
             alpha: 0.7,
@@ -109,7 +133,12 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         ExamViewController = storyboard.instantiateViewController(withIdentifier: "ExamViewController")
         HomeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
         FtpViewController = storyboard.instantiateViewController(withIdentifier: "FtpViewController")
-        ProflieViewController = storyboard.instantiateViewController(withIdentifier: "ProflieViewController")
+        if UserDefaults.standard.bool(forKey: "ISUSERLOGGEDIN") == true {
+             ProflieViewController = storyboard.instantiateViewController(withIdentifier: "ProflieViewController")
+        }else{
+            ProflieViewController = storyboard.instantiateViewController(withIdentifier: "LogIn")
+        }
+       
         
         //Add stroyboards to array
         viewControllers = [ FeedsViewController, ExamViewController,HomeViewController, FtpViewController, ProflieViewController]
@@ -131,9 +160,9 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         self.sidebarBtn.alpha = 0
         UIView.animate(withDuration: 0.3)
         {
-            self.sideBar.frame.origin.x = self.view.frame.origin.x * 1.075
-            self.sideBar.frame.origin.y = self.view.bounds.midY * 0.075
-            self.blurEffect.alpha = 0.925
+            self.sideBar.center.x = self.view.center.x * 0.312
+           
+           self.blurEffect.alpha = 0.925
             
             
             self.effectBack.alpha = 1
@@ -161,7 +190,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         UIView.animate(withDuration: 0.3)
         {
             self.sidebarBtn.alpha = 1
-            self.blurEffect.alpha = 0
+           self.blurEffect.alpha = 0
             
             self.effectBack.alpha = 0
             self.sideBar.frame.origin.x = self.sideBarOriginX
@@ -237,9 +266,17 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
         
         let previousIndex = selectedIndex
         
-        print(selectedIndex)
+        //nslog(selectedIndex)
         selectedIndex = sender.tag
-        print(selectedIndex)
+        //nslog(selectedIndex)
+        if(selectedIndex == 3 || selectedIndex == 1 )
+        {
+            sidebarBtn.alpha = 0
+        }
+        else
+        {
+            sidebarBtn.alpha = 1
+        }
         
         buttons[previousIndex].isSelected = false
         

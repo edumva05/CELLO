@@ -37,9 +37,10 @@ NSString *myURL;
     if (_gnexus) {
         [self nextUrl:_gnexus];
     } else {
-        [self nextUrl:@"ftp://10.1.1.172/g_gallery/"];
+        [self nextUrl:@"ftp://10.1.0.173/g_gallery/"];
         [self getPath:myURL];
     }
+    
     
     _gwebView.alpha = 0;
     
@@ -76,7 +77,7 @@ NSString *gallerylla ;
     lbl.text = newString3;
     //lbl.font.labelFontSize = [fontWithName:lbl size:50.0]];
    
-    NSLog(newString);
+    //nslog2(newString);
     NSString *cellLblPath = [[array objectAtIndex:indexPath.row] substringFromIndex:59];
     
     
@@ -102,12 +103,12 @@ NSString *gallerylla ;
             NSString *get2 = [get1 stringByReplacingOccurrencesOfString:@".jpg" withString:@""];
             
             int *get3 = [get2 integerValue];
-            NSLog(@"%d",get3);
+            //nslog2(@"%d",get3);
             
             NSString *get5= _glblon.text;
             
             NSString *ftpLocation = [NSString stringWithFormat:@"%@%d.jpg", get5, get3];
-            NSLog(@"FTP LOCATION OF IMAGE:%@" , ftpLocation );
+            //nslog2(@"FTP LOCATION OF IMAGE:%@" , ftpLocation );
             //variable to recieve data
             NSMutableData *responseData;
             
@@ -180,19 +181,19 @@ NSString *gallerylla ;
          NSString *get2 = [get1 stringByReplacingOccurrencesOfString:@".jpg" withString:@""];*/
         NSString *nameGet = [[cellLblPath componentsSeparatedByString:@"_"] firstObject];
         NSString *get2= [[cellLblPath componentsSeparatedByString:@"_"] lastObject];
-        NSLog(@"get2: %@",get2);
+        //nslog2(@"get2: %@",get2);
         int *get3 = [get2 integerValue];
-        NSLog(@"%d",get3);
+        //nslog2(@"%d",get3);
         
-        NSString *ftpLocation = [NSString stringWithFormat:@"ftp://10.1.1.172/g_gallery/%@_%d/%d.jpg", nameGet, get3, get3];
+        NSString *ftpLocation = [NSString stringWithFormat:@"ftp://10.1.0.173/g_gallery/%@_%d/%d.jpg", nameGet, get3, get3];
         
-        NSLog(@"%@", ftpLocation);
+        //nslog2(@"%@", ftpLocation);
         //variable to recieve data
         NSMutableData *responseData;
         
         //loads ftpLocation into url
         NSURL *gurl = [NSURL URLWithString: ftpLocation];
-        NSLog(@"url: %@", gurl);
+        //nslog2(@"url: %@", gurl);
         
         
         //Connect to ftp
@@ -248,7 +249,7 @@ NSString *gallerylla ;
 
 -(void)nextUrl :(NSString *)str {
     
-    if ([str  isEqual: @"ftp://10.1.1.172/g_gallery/"]) {
+    if ([str  isEqual: @"ftp://10.1.0.173/g_gallery/"]) {
         [self.glblhead setText:@"FTP"];
     } else {
         if ([str hasPrefix:@"ftp://"]) {
@@ -277,7 +278,7 @@ NSString *gallerylla ;
         [self.gallerycollectionView reloadData];
     }
     
-    if ([_gurl isEqual:@"ftp://10.1.1.172/g_gallery/"]) {
+    if ([_gurl isEqual:@"ftp://10.1.0.173/g_gallery/"]) {
         [self.gbtn setEnabled:NO];
         self.gbtn.alpha = 0;
     } else {
@@ -293,6 +294,7 @@ NSString *gallerylla ;
     
     
 }
+
 
 -(void)nextFile :(NSString *)str {
     
@@ -329,28 +331,34 @@ NSString *gallerylla ;
     
 }
 -(IBAction)gback:(id)sender{
-    if([_glblon.text isEqual:@"ftp://10.1.1.172/g_gallery/"]){
-        _gbtn.alpha = 0;
-        _gbtn2.alpha = 0;
-        
-    }
+    _btng.alpha = 1;
+    
     if (_gwebView.alpha == 1) {
         [_gwebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @""]]];
         _gwebView.alpha = 0;
         
         _gbtn2.alpha = 0;
+        
     }
     else{
-        NSArray *newUrlArray = [_gurl componentsSeparatedByString:@"/"];
-        _gurl = @"";
-        NSString *new = @"";
-        for (int i = 0; i<newUrlArray.count-2; i++) {
-            new = [new stringByAppendingString:newUrlArray[i]];
-            new = [new stringByAppendingString:@"/"];
+        if([_glblon.text isEqual:@"ftp://10.1.0.173/g_gallery/"]){
+            [self performSegueWithIdentifier:@"segue_back2" sender:self];
+            _gbtn2.alpha = 0;
+            
         }
-        
-        [self nextUrl:new];
-        _glblon.text = new;
+        else{
+            NSArray *newUrlArray = [_gurl componentsSeparatedByString:@"/"];
+            _gurl = @"";
+            NSString *new = @"";
+            for (int i = 0; i<newUrlArray.count-2; i++) {
+                new = [new stringByAppendingString:newUrlArray[i]];
+                new = [new stringByAppendingString:@"/"];
+                
+            }
+            
+            [self nextUrl:new];
+            _glblon.text = new;
+        }
     }
     
 }

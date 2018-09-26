@@ -13,6 +13,7 @@
 {
     NSArray *arrayH;
     NSString *topassH;
+    
 }
 
 @end
@@ -23,13 +24,14 @@
 
 - (void)viewDidLoad {
     _webViewH.delegate = self;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _urlH=@"";
     if (_nexusH) {
         [self nextUrl:_nexusH];
     } else {
-        [self nextUrl:@"ftp://10.1.1.172/h_work/"];
+        [self nextUrl:@"ftp://10.1.0.173/h_work/"];
     }
     
     _webViewH.alpha = 0;
@@ -50,6 +52,7 @@ NSString *llaH ;
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+
     UILabel *lbl = (UILabel *)[cell viewWithTag:1];
     lbl.text=[[arrayH objectAtIndex:indexPath.row] substringFromIndex:59];
     UIImageView *img = (UIImageView *)[cell viewWithTag:2];
@@ -82,7 +85,44 @@ NSString *llaH ;
             img.image = [UIImage imageNamed:@"file.png"];
         }
     } else {
-        img.image = [UIImage imageNamed:@"folder.png"];
+        
+       
+        if([_lblonH.text isEqual:@"ftp://10.1.0.173/h_work/"])
+        {
+            NSString *cellLblPathH = [[arrayH objectAtIndex:indexPath.row] substringFromIndex:59];
+            
+            NSString *nameGetH = [[cellLblPathH componentsSeparatedByString:@" "] firstObject];
+            NSString *get2H= [[cellLblPathH componentsSeparatedByString:@" "] lastObject];
+            NSLog(@"get2: %@",get2H);
+            int *get3H = [get2H integerValue];
+            NSLog(@"%d",get3H);
+            
+            NSString *ftpLocationH = [NSString stringWithFormat:@"ftp://10.1.0.36/images/%d.png", get3H];
+            
+            NSLog(@"%@", ftpLocationH);
+            //variable to recieve data
+            NSMutableData *responseData;
+            
+            //loads ftpLocation into url
+            NSURL *gurlH = [NSURL URLWithString: ftpLocationH];
+            NSLog(@"url: %@", gurlH);
+            NSURLRequest *request = [NSURLRequest requestWithURL:gurlH];
+            [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * r, NSData * d, NSError * e) {
+                //save
+                UIImage *imgeH = [[UIImage alloc] initWithData:d];
+                
+                //display
+                img.image = imgeH;
+            }];
+            
+        }
+        else
+        {
+  
+          img.image = [UIImage imageNamed:@"folder.png"];
+        }
+        
+        
     }
     return cell;
 }
@@ -105,7 +145,7 @@ NSString *llaH ;
 
 
 -(void)nextUrl :(NSString *)str {
-    if ([str  isEqual: @"ftp://10.1.1.172/h_work/"]) {
+    if ([str  isEqual: @"ftp://10.1.0.173/h_work/"]) {
         [self.lblheadH setText:@"HOMEWORK"];
     } else {
         if ([str hasPrefix:@"ftp://"]) {
@@ -132,9 +172,9 @@ NSString *llaH ;
         [self.collection reloadData];
     }
     
-    if ([_urlH isEqual:@"ftp://10.1.1.172/h_work/"]) {
-        [self.btnH setEnabled:NO];
-        self.btnH.alpha = 0;
+    if ([_urlH isEqual:@"ftp://10.1.0.173/h_work/"]) {
+        [self.btnH setEnabled:YES];
+        self.btnH.alpha = 1;
     } else {
         [self.btnH setEnabled:YES];
         self.btnH.alpha = 1;
@@ -153,8 +193,8 @@ NSString *llaH ;
     str = [str stringByReplacingOccurrencesOfString:lastChar withString:firstLetter];
     str = [str stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *myURL = [NSString stringWithFormat:@"%@%@", _urlH,str];
-    if ([myURL isEqual:@"ftp://10.1.1.172/h_work/"]) {
-        [self.btnH setEnabled:NO];
+    if ([myURL isEqual:@"ftp://10.1.0.173/h_work/"]) {
+        [self.btnH setEnabled:YES];
         self.btnH.alpha = 0;
     } else {
         [self.btnH setEnabled:YES];
@@ -171,28 +211,34 @@ NSString *llaH ;
 }
 
 -(IBAction)back:(id)sender{
-    if([_lblonH.text isEqual:@"ftp://10.1.1.172/h_work/"]){
-        _btnH.alpha = 0;
-        _btn2H.alpha = 0;
-        
-    }
+    _btnH.alpha = 1;
+    
     if (_webViewH.alpha == 1) {
         [_webViewH loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @""]]];
         _webViewH.alpha = 0;
         
         _btn2H.alpha = 0;
+       
     }
     else{
+        if([_lblonH.text isEqual:@"ftp://10.1.0.173/h_work/"]){
+        [self performSegueWithIdentifier:@"segue_back" sender:self];
+        _btn2H.alpha = 0;
+        
+    }
+        else{
         NSArray *newUrlArray = [_urlH componentsSeparatedByString:@"/"];
         _urlH = @"";
         NSString *new = @"";
         for (int i = 0; i<newUrlArray.count-2; i++) {
             new = [new stringByAppendingString:newUrlArray[i]];
             new = [new stringByAppendingString:@"/"];
+        
         }
         
         [self nextUrl:new];
         _lblonH.text = new;
+        }
     }
     
 }

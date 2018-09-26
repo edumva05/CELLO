@@ -25,8 +25,11 @@
 		E43EF15D21574BD9008E9E4C /* SocialNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF15C21574BD8008E9E4C /* SocialNetworkViewController.swift */; };
 		E43EF16021574DA0008E9E4C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43EF15F21574D9E008E9E4C /* WebKit.framework */; };
 		E43EF16221574DEC008E9E4C /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF16121574DEC008E9E4C /* ExamViewController.swift */; };
-		E455AE392151105500DF29D6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455AE382151105500DF29D6 /* ResultViewController.swift */; };
-		E455AE3B2151107A00DF29D6 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E455AE3A2151107A00DF29D6 /* CircularProgressView.swift */; };
+		E43EF1642157581B008E9E4C /* AboutDevelopersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF1632157581B008E9E4C /* AboutDevelopersViewController.swift */; };
+		E43EF1672157BAAC008E9E4C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF1652157BAAC008E9E4C /* ResultViewController.swift */; };
+		E43EF1682157BAAC008E9E4C /* progressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF1662157BAAC008E9E4C /* progressBar.swift */; };
+		E43EF16A2157F4BC008E9E4C /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF1692157F4BC008E9E4C /* UpdateViewController.swift */; };
+		E43EF16C2157F5AD008E9E4C /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43EF16B2157F5AD008E9E4C /* HelpViewController.swift */; };
 		E47FA4112152C6C4001A8E98 /* CheckInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */; };
 		E499DF5C21555B31000F691D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499DF5B21555B31000F691D /* Reachability.swift */; };
 		E4A749C021550D840096AC11 /* Edumva.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4A749BE21550D830096AC11 /* Edumva.xcdatamodeld */; };
@@ -64,8 +67,11 @@
 		E43EF15C21574BD8008E9E4C /* SocialNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkViewController.swift; sourceTree = "<group>"; };
 		E43EF15F21574D9E008E9E4C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E43EF16121574DEC008E9E4C /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
-		E455AE382151105500DF29D6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		E455AE3A2151107A00DF29D6 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		E43EF1632157581B008E9E4C /* AboutDevelopersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDevelopersViewController.swift; sourceTree = "<group>"; };
+		E43EF1652157BAAC008E9E4C /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		E43EF1662157BAAC008E9E4C /* progressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = progressBar.swift; sourceTree = "<group>"; };
+		E43EF1692157F4BC008E9E4C /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		E43EF16B2157F5AD008E9E4C /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternetConnection.swift; sourceTree = "<group>"; };
 		E499DF5B21555B31000F691D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E4A749BF21550D830096AC11 /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
@@ -110,19 +116,22 @@
 		64A006D7213FD940001BA205 /* EDUMVA */ = {
 			isa = PBXGroup;
 			children = (
+				E438922021429589000555B2 /* FTP */,
 				E4AC8F0E2156B0E600F48996 /* Calendar */,
 				E455AE3C2151108900DF29D6 /* Results */,
 				E438922E21429B62000555B2 /* HomeWork */,
 				E438922D21429946000555B2 /* Gallery */,
-				E438922021429589000555B2 /* FTP */,
 				E4CD435A214015B800C1FEB5 /* Feeds */,
 				64A006D8213FD940001BA205 /* AppDelegate.swift */,
 				E4252D5D2156386C006FAD31 /* NetworkErrorViewController.swift */,
+				E43EF16B2157F5AD008E9E4C /* HelpViewController.swift */,
 				641F756A214FE46800343611 /* LoginViewController.swift */,
+				E43EF1692157F4BC008E9E4C /* UpdateViewController.swift */,
 				E43EF16121574DEC008E9E4C /* ExamViewController.swift */,
 				E4D0C3632152A79E00FC8FAA /* FoodViewController.swift */,
 				E47FA4102152C6C4001A8E98 /* CheckInternetConnection.swift */,
 				E43EF1562157383D008E9E4C /* AboutViewController.swift */,
+				E43EF1632157581B008E9E4C /* AboutDevelopersViewController.swift */,
 				E499DF5B21555B31000F691D /* Reachability.swift */,
 				E43EF15C21574BD8008E9E4C /* SocialNetworkViewController.swift */,
 				64A006DA213FD940001BA205 /* HomeViewController.swift */,
@@ -153,8 +162,8 @@
 			children = (
 				E438922921429942000555B2 /* GALLERYViewController.h */,
 				E438922A21429942000555B2 /* GALLERYViewController.m */,
-				E438922721429942000555B2 /* ViewControllerGALLERY.h */,
 				E438922821429942000555B2 /* ViewControllerGALLERY.m */,
+				E438922721429942000555B2 /* ViewControllerGALLERY.h */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -181,8 +190,8 @@
 		E455AE3C2151108900DF29D6 /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				E455AE3A2151107A00DF29D6 /* CircularProgressView.swift */,
-				E455AE382151105500DF29D6 /* ResultViewController.swift */,
+				E43EF1662157BAAC008E9E4C /* progressBar.swift */,
+				E43EF1652157BAAC008E9E4C /* ResultViewController.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -277,17 +286,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E455AE392151105500DF29D6 /* ResultViewController.swift in Sources */,
 				E4D0C3642152A79E00FC8FAA /* FoodViewController.swift in Sources */,
 				E43EF1572157383D008E9E4C /* AboutViewController.swift in Sources */,
 				641F756B214FE46800343611 /* LoginViewController.swift in Sources */,
+				E43EF1682157BAAC008E9E4C /* progressBar.swift in Sources */,
 				E47FA4112152C6C4001A8E98 /* CheckInternetConnection.swift in Sources */,
+				E43EF1642157581B008E9E4C /* AboutDevelopersViewController.swift in Sources */,
 				E43EF16221574DEC008E9E4C /* ExamViewController.swift in Sources */,
 				E438923321429B89000555B2 /* webHomework.m in Sources */,
 				E438922C21429943000555B2 /* GALLERYViewController.m in Sources */,
+				E43EF16A2157F4BC008E9E4C /* UpdateViewController.swift in Sources */,
 				E499DF5C21555B31000F691D /* Reachability.swift in Sources */,
 				64A006DB213FD940001BA205 /* HomeViewController.swift in Sources */,
 				E438922B21429943000555B2 /* ViewControllerGALLERY.m in Sources */,
+				E43EF16C2157F5AD008E9E4C /* HelpViewController.swift in Sources */,
+				E43EF1672157BAAC008E9E4C /* ResultViewController.swift in Sources */,
 				E4AC8F112156B0E600F48996 /* CalendarVariables.swift in Sources */,
 				E4252D602156520D006FAD31 /* ProfileViewController.swift in Sources */,
 				E564E66021400CEC00A091DF /* TabBarController.swift in Sources */,
@@ -297,7 +310,6 @@
 				E4252D5E2156386C006FAD31 /* NetworkErrorViewController.swift in Sources */,
 				E4CD4359214015AC00C1FEB5 /* ViewControllerFEEDS.m in Sources */,
 				E4389225214295D7000555B2 /* ViewControllerFTP.m in Sources */,
-				E455AE3B2151107A00DF29D6 /* CircularProgressView.swift in Sources */,
 				E4389226214295D7000555B2 /* webViewViewController.m in Sources */,
 				64A006D9213FD940001BA205 /* AppDelegate.swift in Sources */,
 				E43EF15D21574BD9008E9E4C /* SocialNetworkViewController.swift in Sources */,
@@ -446,14 +458,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4E33XWS7UW;
+				DEVELOPMENT_TEAM = WF7QPULRK5;
 				INFOPLIST_FILE = EDUMVA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NMC.EDUMV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NM.EDUMVA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -467,14 +479,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4E33XWS7UW;
+				DEVELOPMENT_TEAM = WF7QPULRK5;
 				INFOPLIST_FILE = EDUMVA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.NMC.EDUMV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NM.EDUMVA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;

@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/edumva4/Desktop/MVA V1.00/Version 2/EDUMVA/CoreDataDemo.xcdatamodeld">
-   </FileRef>
-   <FileRef
       location = "self:EDUMVA.xcodeproj">
    </FileRef>
 </Workspace>

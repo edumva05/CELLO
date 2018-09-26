@@ -37,7 +37,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             let newUser = NSManagedObject(entity: entity!, insertInto: context)
             
             
-            
+            profileImage.layer.cornerRadius = (profileImage.frame.size.width/2)
+            profileImage.clipsToBounds = true
             
             do {
                 
@@ -45,7 +46,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 
             } catch {
                 
-                print("Failed saving")
+                //nslog("Failed saving")
             }
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
@@ -85,7 +86,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 
             } catch {
                 
-                print("Failed")
+                //nslog("Failed")
             }
         }else {
             // Fallback on earlier versions
@@ -99,8 +100,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         if let imageData = imageData {
             let picture = UIImage(data: imageData as Data)
             profileImage.image = picture
-            profileImage.layer.cornerRadius = profileImage.bounds.size.width/2
-            profileImage.clipsToBounds = true
+          //  profileImage.layer.cornerRadius = profileImage.bounds.size.width/2
+          //  profileImage.clipsToBounds = true
             TransferImage = picture
             
             

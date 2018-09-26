@@ -46,7 +46,7 @@ class TabBarController: UIViewController, UIGestureRecognizerDelegate  {
     @IBAction func exit(_ sender: Any) {
         _Exit(0)
     }
-    //hello
+
     @IBOutlet weak var logOut: UIButton!
     @IBAction func logOutAct(_ sender: Any)
     {
